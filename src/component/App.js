@@ -10,10 +10,15 @@ class App extends React.Component {
     };
   }
 
+  showAlert(){
+    alert("This is a new alert");
+  }
+
   render() {
     return (
       <div>
         <span>This is a good testing</span>
+        <button onClick={this.showAlert}>Show alert</button>
       </div>
     );
   }

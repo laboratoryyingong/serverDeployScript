@@ -1,5 +1,10 @@
 const { app, BrowserWindow } = require('electron')
 
+const path = require('path')
+const os = require('os')
+
+console.log(os.homedir())
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -21,6 +26,11 @@ function createWindow() {
         // when you should delete the corresponding element.
         win = null
     })
+
+    // Add react debug tools
+    BrowserWindow.addDevToolsExtension(
+        path.join(os.homedir(), '/AppData/Local/Google/Chrome/User Data/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/3.6.0_0')
+     )
 }
 
 // This method will be called when Electron has finished
